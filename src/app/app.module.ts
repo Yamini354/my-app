@@ -12,6 +12,7 @@ import { DataBindingComponent } from './data-binding/data-binding.component';
 import { FormsModule } from '@angular/forms';
 import { DirectivesComponent } from './directives/directives.component';
 import { PipesComponent } from './pipes/pipes.component';
+import { UsersComponent } from './users/users.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { PipesComponent } from './pipes/pipes.component';
     WelcomeComponent,
     DataBindingComponent,
     DirectivesComponent,
-    PipesComponent
+    PipesComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,
