@@ -18,11 +18,12 @@ SetUp:
 
 3) create new app
 
-    cd desktop
+    cd desktop   (cd - change directory)
     ng new my-app
+    
 
 4) start the server
-
+    cd my-app 
     ng serve
 
     check: in browser localhost:4200
@@ -31,25 +32,33 @@ SetUp:
     1) open powershell as administrator
     2) run command:  set-executionPolicy unrestricted
 
+
+
+
+to create new components
+========================
+ng g c login
+
+to start the angular server : ng serve
     
 GIT:
 ====
 
-1) laptopGitSoftware <-> github site
+1) laptopGitSoftware <-> github site (in cmd)
 
-    git config --global user.name  xxxxxxxxxxxxxx
+    git config --global user.name Yamini354
     git config --global user.email xxxxxxxxxxxxxx
 
     check: git config --list
 
-2) my-app  <-> repository
+2) my-app  <-> repository  (in vs code terminal)
 
     git init
-    git remote add origin xxxxxxxxxxxxx
+    git remote add origin https://github.com/Yamini354/my-app.git
 
     check: git remote -v
 
-3) code sync (in vs code terminal)
+3) code sync (in vs code terminal) (to add updated code)
 
     git add .                      //  changes -> stagedChanged
     git commit -m "xxxxxxxx"       //  stagedChange -> 0
