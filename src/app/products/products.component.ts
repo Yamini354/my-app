@@ -51,7 +51,7 @@ totalItems(){
   alert("Total Cart Items:"+totalcartitems);
 }
 
-users:any = this.products;
+product:any = this.products;
 
   name:string = "";
   price:number = 0;
