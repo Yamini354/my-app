@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { DirectivesComponent } from './directives/directives.component';
 import { PipesComponent } from './pipes/pipes.component';
 import { UsersComponent } from './users/users.component';
+import { ProductsComponent } from './products/products.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { UsersComponent } from './users/users.component';
     DataBindingComponent,
     DirectivesComponent,
     PipesComponent,
-    UsersComponent
+    UsersComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,
