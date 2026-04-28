@@ -14,6 +14,8 @@ import { DirectivesComponent } from './directives/directives.component';
 import { PipesComponent } from './pipes/pipes.component';
 import { UsersComponent } from './users/users.component';
 import { ProductsComponent } from './products/products.component';
+import { VehiclesComponent } from './vehicles/vehicles.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -27,12 +29,14 @@ import { ProductsComponent } from './products/products.component';
     DirectivesComponent,
     PipesComponent,
     UsersComponent,
-    ProductsComponent
+    ProductsComponent,
+    VehiclesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

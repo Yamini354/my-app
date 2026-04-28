@@ -65,3 +65,22 @@ GIT:
     git push                       //  100%
 
     ***) first time suggestion command with -f
+
+API INTEGRATION:
+================
+
+0) create component and service
+
+1) import HTTPClient module
+
+
+
+2) Inject HttpClient service in VehicleService
+    get, post, put, delete
+
+3) do api call with get that will return observable of data
+
+4) Inject vehicleService in VehicleCompoennt
+   and subscribe to listen the data
+
+5) loop in html to display the data.

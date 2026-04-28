@@ -10,6 +10,7 @@ import { DirectivesComponent } from './directives/directives.component';
 import { PipesComponent } from './pipes/pipes.component';
 import { UsersComponent } from './users/users.component';
 import { ProductsComponent } from './products/products.component';
+import { VehiclesComponent } from './vehicles/vehicles.component';
 
 const routes: Routes = [
   {path:'login', component:LoginComponent},
@@ -20,7 +21,8 @@ const routes: Routes = [
     {path:'directives',component:DirectivesComponent},
     {path:'pipes',component:PipesComponent},
     {path:'users',component:UsersComponent},
-    {path:'products',component:ProductsComponent}
+    {path:'products',component:ProductsComponent},
+    {path:'vehicles',component:VehiclesComponent}
   ]},
   {path:'', component:LoginComponent},
   {path:'**', component:PageNotFoundComponent}
