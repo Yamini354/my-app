@@ -1,0 +1,65 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Product card */
+.product {
+    border: 2px solid olive;
+    border-radius: 10px;
+    padding: 15px;
+    background: #fff;
+    text-align: left;
+    position: relative;
+}
+
+/* Image */
+.product img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+}
+
+/* ID badge (like rating box in your screenshot) */
+.num {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: gray;
+    color: white;
+    padding: 3px 6px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+/* Title */
+.product h3 {
+    font-size: 16px;
+    margin: 10px 0;
+} 
+
+/* Price */
+.price {
+    color: red;
+    font-weight: bold;
+}
+
+/* Description */
+.description {
+    font-size: 13px;
+    color: #555;
+}
+
+/* Category */
+.category {
+    font-size: 13px;
+    color: #888;
+}
+
+/* Rating */
+.rating {
+    margin-top: 8px;
+    font-weight: bold;
+}

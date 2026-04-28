@@ -1,0 +1,16 @@
+<div class="container">
+    <div *ngFor="let flipkartproduct of flipkartProducts" class="product">
+
+        <img [src]="flipkartproduct.image" alt="">
+        <p class="num">{{flipkartproduct.id}}</p>
+        <h3>{{flipkartproduct.title}}</h3>
+        <p class="price"> &dollar; {{flipkartproduct.price}}</p>
+        <p class="description">{{flipkartproduct.description}}</p>
+        <p class="category">{{flipkartproduct.category}}</p>
+        <p class="rating">⭐ {{flipkartproduct.rating.rate}} ({{flipkartproduct.rating.count}} reviews)</p>
+
+    </div>
+</div>
+
+
+

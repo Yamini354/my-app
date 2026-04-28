@@ -12,8 +12,10 @@ import { UsersComponent } from './users/users.component';
 import { ProductsComponent } from './products/products.component';
 import { VehiclesComponent } from './vehicles/vehicles.component';
 import { AccountsComponent } from './accounts/accounts.component';
+import { FlipkartproductsComponent } from './flipkartproducts/flipkartproducts.component';
 
 const routes: Routes = [
+  {path:'', component:LoginComponent},
   {path:'login', component:LoginComponent},
   {path:'dashboard', component:DashboardComponent, children:[
     {path:'home',component:HomeComponent},
@@ -24,9 +26,10 @@ const routes: Routes = [
     {path:'users',component:UsersComponent},
     {path:'products',component:ProductsComponent},
     {path:'vehicles',component:VehiclesComponent},
-    {path:'accounts',component:AccountsComponent}
+    {path:'accounts',component:AccountsComponent},
+    {path:'flipkartproducts',component:FlipkartproductsComponent}
   ]},
-  {path:'', component:LoginComponent},
+  
   {path:'**', component:PageNotFoundComponent}
 ];
 
