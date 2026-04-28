@@ -1,0 +1,8 @@
+<div *ngFor="let mails of mail">
+    <!-- <p>{{mails.userId}}</p> -->
+    <p [ngStyle]="{'font-weight':mails.completed ? 'bold': 'normal'}" >
+        {{mails.id}}&nbsp; &nbsp;{{mails.title}}
+    </p>
+    
+</div>
+    

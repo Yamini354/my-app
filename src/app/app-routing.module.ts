@@ -13,6 +13,7 @@ import { ProductsComponent } from './products/products.component';
 import { VehiclesComponent } from './vehicles/vehicles.component';
 import { AccountsComponent } from './accounts/accounts.component';
 import { FlipkartproductsComponent } from './flipkartproducts/flipkartproducts.component';
+import { MailComponent } from './mail/mail.component';
 
 const routes: Routes = [
   {path:'', component:LoginComponent},
@@ -27,7 +28,8 @@ const routes: Routes = [
     {path:'products',component:ProductsComponent},
     {path:'vehicles',component:VehiclesComponent},
     {path:'accounts',component:AccountsComponent},
-    {path:'flipkartproducts',component:FlipkartproductsComponent}
+    {path:'flipkartproducts',component:FlipkartproductsComponent},
+    {path:'mail',component:MailComponent}
   ]},
   
   {path:'**', component:PageNotFoundComponent}
