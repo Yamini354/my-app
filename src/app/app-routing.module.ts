@@ -14,6 +14,7 @@ import { VehiclesComponent } from './vehicles/vehicles.component';
 import { AccountsComponent } from './accounts/accounts.component';
 import { FlipkartproductsComponent } from './flipkartproducts/flipkartproducts.component';
 import { MailComponent } from './mail/mail.component';
+import { WeatherComponent } from './weather/weather.component';
 
 const routes: Routes = [
   {path:'', component:LoginComponent},
@@ -29,7 +30,8 @@ const routes: Routes = [
     {path:'vehicles',component:VehiclesComponent},
     {path:'accounts',component:AccountsComponent},
     {path:'flipkartproducts',component:FlipkartproductsComponent},
-    {path:'mail',component:MailComponent}
+    {path:'mail',component:MailComponent},
+    {path:'weather',component:WeatherComponent}
   ]},
   
   {path:'**', component:PageNotFoundComponent}

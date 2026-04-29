@@ -9,9 +9,10 @@
             <th>Fuel</th>
             <th>Color</th>
             <th>Image</th>
-            <th>Cost</th>
-            <th>Tyres</th>
+            <!-- <th>Cost</th>
+            <th>Tyres</th> -->
             <th>Id</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -26,9 +27,12 @@
              <td>
                 <img [src]="vehicle.image" alt="" width="100px" height="100px">
              </td>
-            <td>{{vehicle.cost}}</td>
-            <td>{{vehicle.tyres}}</td>
+            <!-- <td>{{vehicle.cost}}</td>
+            <td>{{vehicle.tyres}}</td> -->
             <td>{{vehicle.id}}</td>
+            <th>
+                <button class="red-button" (click)="deleteVehicle(vehicle.id)">delete</button>
+            </th>
 
         </tr>
     </tbody>
