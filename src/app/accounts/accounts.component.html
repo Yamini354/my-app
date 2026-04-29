@@ -1,4 +1,21 @@
 <p>accounts works!</p>
+<input type="text" placeholder="search" [(ngModel)]="term">
+<button class="blue-button" (click)="filterAccounts()">search</button>
+
+<label for="" >Column:</label>
+<select name="" id="" [(ngModel)]="column">
+    <option value="account_name">Account Name</option>
+    <option value="city">city</option>
+    <option value="ifsc_code">IFSC Code</option>
+</select>
+
+<label for="" >Order:</label>
+<select name="" id="" [(ngModel)]="order">
+    <option value="asc">Ascending</option>
+    <option value="desc">Descending</option>
+</select>
+<button class="blue-button" (click)="sortAccounts()">Sort</button>
+
 <table>
     <thead>
         <tr>
@@ -9,12 +26,13 @@
             <th>Profie Picture</th>
             <th>IFSC Code</th>
             <th>ID</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let account of accounts">
             <td>{{account.account_name}}</td>
-            <td>{{account.available_balance}}</td>
+            <td>&dollar; {{account.available_balance}}</td>
             <td>{{account.account_number}}</td>
             <td>{{account.city}}</td>
             <!-- <td>{{account.profie_picture}}</td> -->
@@ -23,6 +41,16 @@
              </td>
             <td>{{account.ifsc_code}}</td>
             <td>{{account.id}}</td>
+            <td>
+                <button class="red-button" (click)="deleteAccount(account.id)">delete</button>
+            </td>
         </tr>
     </tbody>
 </table>
+
+<button 
+    class="yellow-button"
+    (click)="pageAccounts(i+1)"
+    *ngFor="let page of [].constructor(10), let i=index"
+>
+{{i+1}}</button>

@@ -11,6 +11,22 @@ export class AccountsService {
 
   getAccounts():Observable<any>{
 
-    return this.httpClient.get("https://6128991386a213001729f9df.mockapi.io/test/v1/principals")
+    return this.httpClient.get("https://6128991386a213001729f9df.mockapi.io/test/v1/principals?limit=10&page=1");
+  }
+
+  getFilterAccounts(term:string):Observable<any>{
+    return this.httpClient.get("https://6128991386a213001729f9df.mockapi.io/test/v1/principals?filter="+term);
+  }
+
+  getSortAccount(column:string,order:string):Observable<any>{
+    return this.httpClient.get("https://6128991386a213001729f9df.mockapi.io/test/v1/principals?sortBy="+column+"&order="+order);
+  }
+
+  getPagedAccounts(page:number):Observable<any>{
+    return this.httpClient.get("https://6128991386a213001729f9df.mockapi.io/test/v1/principals?limit=10&page="+page);
+  }
+
+  deleteAccount(id:string):Observable<any>{
+    return this.httpClient.delete("https://6128991386a213001729f9df.mockapi.io/test/v1/principals/"+id);
   }
 }
