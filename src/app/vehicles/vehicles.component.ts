@@ -49,7 +49,18 @@ export class VehiclesComponent {
       }
     )
   }
-  
+
+  pageVehicles(page:number){
+    this.vehicleService.getPagedVehicles(page).subscribe(
+      (data:any)=>{
+        this.vehicles=data;
+      },
+      (err:any)=>{
+        alert("internal server error");
+      }
+    )
+  }
+
   deleteVehicle(id: string) {
     this.vehicleService.deleteVehicle(id).subscribe(
       (data: any) => {
