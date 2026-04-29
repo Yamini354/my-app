@@ -23,6 +23,19 @@ export class VehiclesComponent {
     )
   }
 
+  term:string="";
+
+  filterVehicles(){
+    this.vehicleService.getFilteredVehicles(this.term).subscribe(
+      (data:any)=>{
+        this.vehicles=data;
+      },
+      (err:any)=>{
+        alert("internal server error");
+      }
+    )
+  }
+  
   deleteVehicle(id: string) {
     this.vehicleService.deleteVehicle(id).subscribe(
       (data: any) => {
