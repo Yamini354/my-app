@@ -35,6 +35,20 @@ export class VehiclesComponent {
       }
     )
   }
+
+  column:string="";
+  order:string="";
+
+  sortVehicles(){
+    this.vehicleService.getSortVehicles(this.column,this.order).subscribe(
+      (data:any)=>{
+        this.vehicles=data;
+      },
+      (err:any)=>{
+        alert("internal server error");
+      }
+    )
+  }
   
   deleteVehicle(id: string) {
     this.vehicleService.deleteVehicle(id).subscribe(
