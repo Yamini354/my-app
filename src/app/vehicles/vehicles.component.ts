@@ -61,6 +61,17 @@ export class VehiclesComponent {
     )
   }
 
+  getVehiclesWithParams(page:number=1){
+    this.vehicleService.getVehiclesWithParams(this.term,this.column,this.order,page).subscribe(
+      (data:any)=>{
+        this.vehicles=data;
+      },
+      (err:any)=>{
+        alert("internal server error");
+      }
+    )
+  }
+  
   deleteVehicle(id: string) {
     this.vehicleService.deleteVehicle(id).subscribe(
       (data: any) => {
