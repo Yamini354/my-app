@@ -26,6 +26,9 @@ export class AccountsService {
     return this.httpClient.get("https://6128991386a213001729f9df.mockapi.io/test/v1/principals?limit=10&page="+page);
   }
 
+  createAccount(account:any):Observable<any>{
+    return this.httpClient.post("https://6128991386a213001729f9df.mockapi.io/test/v1/principals",account);
+  }
   deleteAccount(id:string):Observable<any>{
     return this.httpClient.delete("https://6128991386a213001729f9df.mockapi.io/test/v1/principals/"+id);
   }

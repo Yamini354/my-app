@@ -1,0 +1,30 @@
+<h1>Create Vehicle Form</h1>
+
+<form action="" [formGroup]="accountForm" (ngSubmit)="submit()">
+    <label for="">Account Name:</label>
+    <input type="text" formControlName="account_name">
+    <br>
+
+    <label for="">Available Balance:</label>
+    <input type="text" formControlName="available_balance">
+    <br>
+
+    <label for="">Account Number:</label>
+    <input type="text" formControlName="account_number">
+    <br>
+
+    <label for="">City</label>
+    <input type="text" formControlName="city">
+    <br>
+
+    <label for="">Profie Picture</label>
+    <input type="text" formControlName="profie_picture">
+    <br>
+
+    <label for="">IFSC Code</label>
+    <input type="text" formControlName="ifsc_code">
+    <br>
+
+    <input type="submit" >
+    
+</form>

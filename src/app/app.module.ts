@@ -21,6 +21,7 @@ import { FlipkartproductsComponent } from './flipkartproducts/flipkartproducts.c
 import { MailComponent } from './mail/mail.component';
 import { WeatherComponent } from './weather/weather.component';
 import { CreateVehiclesComponent } from './create-vehicles/create-vehicles.component';
+import { CreateAccountsComponent } from './create-accounts/create-accounts.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { CreateVehiclesComponent } from './create-vehicles/create-vehicles.compo
     FlipkartproductsComponent,
     MailComponent,
     WeatherComponent,
-    CreateVehiclesComponent
+    CreateVehiclesComponent,
+    CreateAccountsComponent
   ],
   imports: [
     BrowserModule,
