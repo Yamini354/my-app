@@ -59,6 +59,17 @@ export class AccountsComponent {
       }
     )
   }
+
+  getAccountsWithParams(page:number=1){
+    this.accountService.getAccountsWithParams(this.term,this.column,this.order,page).subscribe(
+      (data:any)=>{
+        this.accounts=data;
+      },
+      (err: any) => {
+        alert("internal server error");
+      }
+    )
+  }
   deleteAccount(id:string){
     this.accountService.deleteAccount(id).subscribe(
       (data:any)=>{
