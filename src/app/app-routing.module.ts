@@ -18,6 +18,7 @@ import { WeatherComponent } from './weather/weather.component';
 import { CreateVehiclesComponent } from './create-vehicles/create-vehicles.component';
 import { CreateAccountsComponent } from './create-accounts/create-accounts.component';
 import { StudentsComponent } from './students/students.component';
+import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
 
 const routes: Routes = [
   {path:'', component:LoginComponent},
@@ -37,7 +38,9 @@ const routes: Routes = [
     {path:'weather',component:WeatherComponent},
     {path:'create-vehicles',component:CreateVehiclesComponent},
     {path:'create-accounts',component:CreateAccountsComponent},
-    {path:'students',component:StudentsComponent}
+    {path:'students',component:StudentsComponent},
+    {path:'vehicle-details/:id',component:VehicleDetailsComponent},
+    {path:'edit-vehicle/:id',component:CreateVehiclesComponent}
   ]},
   
   {path:'**', component:PageNotFoundComponent}

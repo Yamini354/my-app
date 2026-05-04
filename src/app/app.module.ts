@@ -23,6 +23,7 @@ import { WeatherComponent } from './weather/weather.component';
 import { CreateVehiclesComponent } from './create-vehicles/create-vehicles.component';
 import { CreateAccountsComponent } from './create-accounts/create-accounts.component';
 import { StudentsComponent } from './students/students.component';
+import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { StudentsComponent } from './students/students.component';
     WeatherComponent,
     CreateVehiclesComponent,
     CreateAccountsComponent,
-    StudentsComponent
+    StudentsComponent,
+    VehicleDetailsComponent
   ],
   imports: [
     BrowserModule,
