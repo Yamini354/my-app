@@ -17,6 +17,7 @@ import { MailComponent } from './mail/mail.component';
 import { WeatherComponent } from './weather/weather.component';
 import { CreateVehiclesComponent } from './create-vehicles/create-vehicles.component';
 import { CreateAccountsComponent } from './create-accounts/create-accounts.component';
+import { StudentsComponent } from './students/students.component';
 
 const routes: Routes = [
   {path:'', component:LoginComponent},
@@ -35,7 +36,8 @@ const routes: Routes = [
     {path:'mail',component:MailComponent},
     {path:'weather',component:WeatherComponent},
     {path:'create-vehicles',component:CreateVehiclesComponent},
-    {path:'create-accounts',component:CreateAccountsComponent}
+    {path:'create-accounts',component:CreateAccountsComponent},
+    {path:'students',component:StudentsComponent}
   ]},
   
   {path:'**', component:PageNotFoundComponent}

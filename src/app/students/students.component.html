@@ -1,0 +1,56 @@
+
+<div class="divtop">
+        <label for="">search</label>
+        <input type="text" placeholder="search">
+    </div>
+<div class="container">
+    
+    <div *ngFor="let student of students" class="card">
+        <div class="top">
+         <img [src]="student.school_logo" alt="">
+            <h1>{{student.school_name}}</h1><br>
+            <p>City: {{student.school_city}}-{{student.school_pin}}</p>
+        </div>
+        <div class="middle">
+            <div class="middleLeft">
+                <p>Name: {{student.name}}</p>
+                <p>Phone No: {{student.phone}}</p>
+                <p>DOB: {{student.dob}}</p>
+                <p>City: {{student.city}}</p>
+                <p>Email: {{student.email}}</p>
+                <p>{{student.id}}</p>
+            </div>
+            <div class="middleRight">
+                <img [src]="student.profile_picture" alt="">
+            </div>
+        </div>
+        <div class="bottom">
+            <button (click)="viewStudent(student)" >View</button>
+            <button>Edit</button>
+            <button (click)="deleteStudent(student.id)">Delete</button>
+        </div>
+    </div>
+</div>
+
+
+<!-- POPUP MODAL -->
+<div class="modal" *ngIf="selectedStudent">
+    <div class="modal-content">
+        <span class="close" (click)="closeModal()">×</span>
+
+        <div class="modal-header">
+            <img [src]="selectedStudent.profile_picture" alt="">
+            <h2>{{selectedStudent.name}}</h2>
+        </div>
+
+        <div class="modal-body">
+            <p><b>Phone:</b> {{selectedStudent.phone}}</p>
+            <p><b>Email:</b> {{selectedStudent.email}}</p>
+            <p><b>DOB:</b> {{selectedStudent.dob}}</p>
+            <p><b>City:</b> {{selectedStudent.city}}</p>
+            <p><b>School:</b> {{selectedStudent.school_name}}</p>
+            <p><b>School City:</b> {{selectedStudent.school_city}}</p>
+            <p><b>PIN:</b> {{selectedStudent.school_pin}}</p>
+        </div>
+    </div>
+</div>
