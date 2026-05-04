@@ -19,6 +19,7 @@ import { CreateVehiclesComponent } from './create-vehicles/create-vehicles.compo
 import { CreateAccountsComponent } from './create-accounts/create-accounts.component';
 import { StudentsComponent } from './students/students.component';
 import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
+import { AccountDetailsComponent } from './account-details/account-details.component';
 
 const routes: Routes = [
   {path:'', component:LoginComponent},
@@ -40,7 +41,9 @@ const routes: Routes = [
     {path:'create-accounts',component:CreateAccountsComponent},
     {path:'students',component:StudentsComponent},
     {path:'vehicle-details/:id',component:VehicleDetailsComponent},
-    {path:'edit-vehicle/:id',component:CreateVehiclesComponent}
+    {path:'edit-vehicle/:id',component:CreateVehiclesComponent},
+    {path:'account-details/:id',component:AccountDetailsComponent},
+    {path:'edit-account/:id',component:CreateAccountsComponent}
   ]},
   
   {path:'**', component:PageNotFoundComponent}

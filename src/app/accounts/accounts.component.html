@@ -44,7 +44,10 @@
             <td>{{account.ifsc_code}}</td>
             <td>{{account.id}}</td>
             <td>
+                <button class="blue-button" routerLink="/dashboard/account-details/{{account.id}}">view</button>
+                <button class="yellow-button" routerLink="/dashboard/edit-account/{{account.id}}">edit</button>
                 <button class="red-button" (click)="deleteAccount(account.id)">delete</button>
+
             </td>
         </tr>
     </tbody>

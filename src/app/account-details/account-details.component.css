@@ -1,0 +1,22 @@
+.page-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;   
+}
+
+.details {
+    width: 350px;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: block;
+     margin: 0 auto 15px;   /* top margin-0,auto-center the element,15px-bottom margin(space) */
+}

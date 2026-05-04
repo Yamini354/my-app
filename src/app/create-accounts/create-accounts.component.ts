@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl,FormGroup } from '@angular/forms';
 import { AccountsService } from '../accounts.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-create-accounts',
@@ -18,18 +19,45 @@ export class CreateAccountsComponent {
     ifsc_code: new FormControl()
   })
 
-  constructor(private accountService:AccountsService){}
-
-  submit(){
-    console.log(this.accountForm);
-    this.accountService.createAccount(this.accountForm.value).subscribe(
+  id:string="";
+  constructor(private accountService:AccountsService, private activatedRoute:ActivatedRoute){
+    activatedRoute.params.subscribe(
       (data:any)=>{
-        alert("created sucessfully!!!");
-        this.accountForm.reset();
-      },
-      (err:any)=>{
-        alert("creation failed");
+        this.id=data.id;
+        accountService.getAccount(data.id).subscribe(
+          (data:any)=>{
+            this.accountForm.patchValue(data);
+          }
+        )
       }
     )
+  }
+
+  submit(){
+    if(this.id){
+      //edit
+      this.accountService.editAccount(this.id,this.accountForm.value).subscribe(
+        (data:any)=>{
+          alert("edit sucessfully!!!");
+          this.accountForm.reset();
+        },
+        (err:any)=>{
+          alert("edit failed");
+        }
+    )
+    }
+    else{
+      //create
+      //console.log(this.accountForm);
+      this.accountService.createAccount(this.accountForm.value).subscribe(
+        (data:any)=>{
+          alert("created sucessfully!!!");
+          this.accountForm.reset();
+        },
+        (err:any)=>{
+          alert("creation failed");
+        }
+      )
+    }
   }
 }

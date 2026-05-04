@@ -14,6 +14,13 @@ export class AccountsService {
     return this.httpClient.get("https://6128991386a213001729f9df.mockapi.io/test/v1/principals?limit=10&page=1");
   }
 
+  getAccount(id:string):Observable<any>{
+    return this.httpClient.get("https://6128991386a213001729f9df.mockapi.io/test/v1/principals/"+id);
+  }
+
+  editAccount(id:string,vehicle:any):Observable<any>{
+    return this.httpClient.put("https://6128991386a213001729f9df.mockapi.io/test/v1/principals/"+id,vehicle);
+  }
   getFilterAccounts(term:string):Observable<any>{
     return this.httpClient.get("https://6128991386a213001729f9df.mockapi.io/test/v1/principals?filter="+term);
   }
