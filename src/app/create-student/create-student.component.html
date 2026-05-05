@@ -1,0 +1,44 @@
+<h1>Create Student Form</h1>
+
+<form [formGroup]="studentForm" (ngSubmit)="submit()">
+    <label for="">Student Name:</label>
+    <input type="text" formControlName="name">
+    <br>
+
+    <label for="">Phone:</label>
+    <input type="text" formControlName="phone">
+    <br>
+
+    <label for="">City:</label>
+    <input type="text" formControlName="city">
+    <br>
+
+    <label for="">DOB:</label>
+    <input type="text" formControlName="dob">
+    <br>
+
+    <label for="">Profile Picture:</label>
+    <input type="text" formControlName="profile_picture">
+    <br>
+
+    <label for="">Email:</label>
+    <input type="text" formControlName="email">
+    <br>
+
+    <label for="">School Logo:</label>
+    <input type="text" formControlName="school_logo">
+    <br>
+
+    <label for="">School Name:</label>
+    <input type="text" formControlName="school_name">
+    <br>
+
+    <label for="">School City:</label>
+    <input type="text" formControlName="school_city">
+    <br>
+
+    <label for="">School Pincode:</label>
+    <input type="text" formControlName="school_pin">
+    <br>
+    <input type="submit">
+</form>

@@ -1,7 +1,22 @@
 
 <div class="divtop">
-        <label for="">search</label>
-        <input type="text" placeholder="search">
+        <input type="text" placeholder="search"[(ngModel)]="term" >
+        <button (click)="getStudentsWithParams()" >Search</button>
+        <label for="">Column</label>
+        <select name="" id="" [(ngModel)]="column">
+            <option value="school_name">School Name</option>
+            <option value="school_city">School City</option>
+            <option value="name">Student Name</option>
+            <option value="city">Student City</option>
+        </select>
+
+        <label for="">Order</label>
+        <select name="" id=""[(ngModel)]="order">
+            <option value="asc">Ascending</option>
+            <option value="desc">Descending</option>
+        </select>
+        <button (click)="getStudentsWithParams()">Sort</button>
+        <!-- <button routerLink="/dashboard/create-student">New Student Details</button> -->
     </div>
 <div class="container">
     
@@ -25,16 +40,22 @@
             </div>
         </div>
         <div class="bottom">
-            <button (click)="viewStudent(student)" >View</button>
+            <button class="view" routerLink="/dashboard/student-details/{{student.id}}" >View</button>
             <button>Edit</button>
             <button (click)="deleteStudent(student.id)">Delete</button>
         </div>
     </div>
 </div>
 
+<button
+    class="green-button"
+    (click)="getStudentsWithParams(i+1)"
+    *ngFor="let page of [].constructor(10); let i=index"
+>
+{{i+1}}</button>
 
 <!-- POPUP MODAL -->
-<div class="modal" *ngIf="selectedStudent">
+<!-- <div class="modal" *ngIf="selectedStudent">
     <div class="modal-content">
         <span class="close" (click)="closeModal()">×</span>
 
@@ -53,4 +74,4 @@
             <p><b>PIN:</b> {{selectedStudent.school_pin}}</p>
         </div>
     </div>
-</div>
+</div> -->

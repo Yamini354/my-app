@@ -25,6 +25,8 @@ import { CreateAccountsComponent } from './create-accounts/create-accounts.compo
 import { StudentsComponent } from './students/students.component';
 import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
 import { AccountDetailsComponent } from './account-details/account-details.component';
+import { StudentDetailsComponent } from './student-details/student-details.component';
+import { CreateStudentComponent } from './create-student/create-student.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +50,9 @@ import { AccountDetailsComponent } from './account-details/account-details.compo
     CreateAccountsComponent,
     StudentsComponent,
     VehicleDetailsComponent,
-    AccountDetailsComponent
+    AccountDetailsComponent,
+    StudentDetailsComponent,
+    CreateStudentComponent
   ],
   imports: [
     BrowserModule,

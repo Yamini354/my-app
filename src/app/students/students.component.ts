@@ -11,13 +11,29 @@ export class StudentsComponent {
   students:any=[];
 
   constructor(private studentService:StudentsService){
+    this.getStudentsWithParams(1);
+    // studentService.getStudents().subscribe(
+    //   (data:any)=>{
+    //     this.students=data;
+    //   },
+    //   (err:any)=>{
+    //     alert("Internal server error")
+    //   }
+    // )
+  }
 
-    studentService.getStudents().subscribe(
+  
+  column:string="";
+  order:string="";
+  term:string=""; 
+
+  getStudentsWithParams(page:number=1){
+    this.studentService.getStudentsWithParams(this.term,this.column,this.order,page).subscribe(
       (data:any)=>{
         this.students=data;
       },
       (err:any)=>{
-        alert("Internal server error")
+        alert("internal server error");
       }
     )
   }
@@ -35,14 +51,4 @@ export class StudentsComponent {
 
 
 
-//view button
-  selectedStudent: any = null;
-
-viewStudent(student: any) {
-  this.selectedStudent = student;
-}
-
-closeModal() {
-  this.selectedStudent = null;
-}
 }
