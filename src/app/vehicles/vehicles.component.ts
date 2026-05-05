@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { VehiclesService } from '../vehicles.service';
+import { Vehicle } from '../vehicle';
 
 
 @Component({
@@ -9,15 +10,15 @@ import { VehiclesService } from '../vehicles.service';
 })
 export class VehiclesComponent {
 
-  vehicles: any = [];
+  vehicles: Vehicle[] = [];
 
   constructor(private vehicleService: VehiclesService) {
 
     vehicleService.getVehicles().subscribe(
-      (data: any) => {
+      (data: Vehicle[]) => {
         this.vehicles = data;
       },
-      (err: any) => {
+      (err: Error) => {
         alert("Internal server error");
       }
     )
@@ -27,10 +28,10 @@ export class VehiclesComponent {
 
   filterVehicles(){
     this.vehicleService.getFilteredVehicles(this.term).subscribe(
-      (data:any)=>{
+      (data:Vehicle[])=>{
         this.vehicles=data;
       },
-      (err:any)=>{
+      (err:Error)=>{
         alert("internal server error");
       }
     )
@@ -41,10 +42,10 @@ export class VehiclesComponent {
 
   sortVehicles(){
     this.vehicleService.getSortVehicles(this.column,this.order).subscribe(
-      (data:any)=>{
+      (data:Vehicle[])=>{
         this.vehicles=data;
       },
-      (err:any)=>{
+      (err:Error)=>{
         alert("internal server error");
       }
     )
@@ -52,10 +53,10 @@ export class VehiclesComponent {
 
   pageVehicles(page:number){
     this.vehicleService.getPagedVehicles(page).subscribe(
-      (data:any)=>{
+      (data:Vehicle[])=>{
         this.vehicles=data;
       },
-      (err:any)=>{
+      (err:Error)=>{
         alert("internal server error");
       }
     )
@@ -63,22 +64,22 @@ export class VehiclesComponent {
 
   getVehiclesWithParams(page:number=1){
     this.vehicleService.getVehiclesWithParams(this.term,this.column,this.order,page).subscribe(
-      (data:any)=>{
+      (data:Vehicle[])=>{
         this.vehicles=data;
       },
-      (err:any)=>{
-        alert("internal server error");
+      (err:Error)=>{
+        alert("internal server error"); //err.message
       }
     )
   }
   
   deleteVehicle(id: string) {
     this.vehicleService.deleteVehicle(id).subscribe(
-      (data: any) => {
+      (data: Vehicle) => {
         alert("deleted succesfully!!!!");
         location.reload();
       },
-      (err: any) => {
+      (err: Error) => {
         alert("delete failed!");
       }
     )

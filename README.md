@@ -101,3 +101,8 @@ API INTEGRATION:
 7)  put     put(url/id,data)                 update
 
 8)  delete  delete(url/id)                   delete
+
+
+to create interface:
+====================
+ng g i vehicle
