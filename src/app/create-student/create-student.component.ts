@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { StudentsService } from '../students.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-create-student',
@@ -21,7 +23,46 @@ export class CreateStudentComponent {
       school_pin: new FormControl()
     })
   
-    submit(){
-      console.log(this.studentForm.value);
+    id:string="";
+    constructor(private studentService:StudentsService, private activatedRoute:ActivatedRoute){
+      activatedRoute.params.subscribe(
+            (data:any)=>{
+              this.id=data.id;
+              studentService.getStudent(data.id).subscribe(
+                (data:any)=>{
+                  this.studentForm.patchValue(data);
+                }
+              )
+            }
+          )
     }
+    
+    submit(){
+        if (this.id){
+          //edit
+          //console.log(this.vehicleForm);
+          this.studentService.editStudent(this.id,this.studentForm.value).subscribe(
+            (data:any)=>{
+              alert("edited sucessfully!!!");
+              this.studentForm.reset();
+            },
+            (err:any)=>{
+             alert("edit failed");
+            }
+          )
+        }
+        else{
+          //creted
+          //console.log(this.vehicleForm);
+          this.studentService.createStudent(this.studentForm.value).subscribe(
+            (data:any)=>{
+              alert("created sucessfully!!!");
+              this.studentForm.reset();
+            },
+            (err:any)=>{
+              alert("creation failed");
+            }
+          )
+        }
+      }
 }

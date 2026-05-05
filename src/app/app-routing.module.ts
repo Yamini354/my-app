@@ -42,13 +42,13 @@ const routes: Routes = [
     {path:'create-vehicles',component:CreateVehiclesComponent},
     {path:'create-accounts',component:CreateAccountsComponent},
     {path:'students',component:StudentsComponent},
-    
     {path:'vehicle-details/:id',component:VehicleDetailsComponent},
     {path:'edit-vehicle/:id',component:CreateVehiclesComponent},
     {path:'account-details/:id',component:AccountDetailsComponent},
     {path:'edit-account/:id',component:CreateAccountsComponent},
     {path:'student-details/:id',component:StudentDetailsComponent},
-    {path:"create-student",component:CreateStudentComponent}
+    {path:"create-student",component:CreateStudentComponent},
+    {path:"edit-student/:id",component:CreateStudentComponent}
   ]},
   
   {path:'**', component:PageNotFoundComponent}

@@ -1,13 +1,56 @@
 /* ---------- TOP SEARCH AREA ---------- */
-
-
+* {
+    box-sizing: border-box;
+}
 .divtop {
     width: 100%;
-    /* display: flex;
-    justify-content: center; */
+    display: flex;
+    flex-wrap: wrap;              /* makes it responsive */
+    align-items: center;
+    justify-content: space-between;
     gap: 15px;
-    margin: 20px 0;
-    /* align-items: center; */
+    padding: 15px 20px;
+    background: #f9fafb;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Inputs & Selects */
+.divtop input,
+.divtop select {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    outline: none;
+}
+
+/* Search Input wider */
+.divtop input {
+    flex: 1;
+    min-width: 200px;
+}
+
+/* Labels */
+.divtop label {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* Buttons */
+.divtop button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    background: #3b82f6;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.divtop button:hover {
+    background: #2563eb;
 }
 
 /* ---------- MAIN CONTAINER ---------- */
@@ -154,5 +197,46 @@
   object-fit: cover;
 }
 
+/* Pagination container (wrap your buttons in a div if possible) */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+/* Page buttons */
+.green-button {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    background: #e5e7eb; /* light gray */
+    color: #111827;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Hover */
+.green-button:hover {
+    background: #3b82f6;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Active page */
+.green-button.active {
+    background: #2563eb;
+    color: white;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}
+
+/* Disabled button (optional) */
+.green-button:disabled {
+    background: #d1d5db;
+    cursor: not-allowed;
+}
 
 

@@ -56,6 +56,10 @@ GIT:
     git init
     git remote add origin https://github.com/Yamini354/my-app.git
 
+    to remove origin: git remote remove origin
+
+    to check the status: git status
+
     check: git remote -v
 
 3) code sync (in vs code terminal) (to add updated code)
@@ -65,6 +69,28 @@ GIT:
     git push                       //  100%
 
     ***) first time suggestion command with -f
+
+4) to create branch:
+    step-1)git branch branchname (only create branch)
+    step-2)git checkout branchname
+                    or 
+    git checkout -b branchname(it create branch and fetches the data)
+
+    to shift the branchs: git checkout branchname
+
+5) getting code from git to our system:
+    git pull origin master
+
+6) to get child branch data to master branch
+    step-1: we have to be in master
+    step-2:check the status by using: git status or git branch (hear we can find where we are)
+            if we are not in master branch then : git checkout master
+    step-3:git pull origin master
+
+7) to get fresh code from git to our system :
+git clone url(https://github.com/Yamini354/my-app.git)
+hear we don't get node modules file. so we need to use command to install: 
+    npm i
 
 API INTEGRATION:
 ================
