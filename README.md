@@ -133,7 +133,7 @@ to create interface:
 ====================
 ng g i vehicle
 
-to activate gard:
-=================
+to activate or create guard:
+===========================
 ng g g auth
 ? Which type of guard would you like to create? CanActivate
