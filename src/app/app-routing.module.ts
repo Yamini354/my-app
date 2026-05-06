@@ -22,11 +22,12 @@ import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.compo
 import { AccountDetailsComponent } from './account-details/account-details.component';
 import { StudentDetailsComponent } from './student-details/student-details.component';
 import { CreateStudentComponent } from './create-student/create-student.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   {path:'', component:LoginComponent},
   {path:'login', component:LoginComponent},
-  {path:'dashboard', component:DashboardComponent, children:[
+  {path:'dashboard', canActivate:[AuthGuard], component:DashboardComponent, children:[
     {path:'home',component:HomeComponent},
     {path:'welcome',component:WelcomeComponent},
     {path:'data-binding',component:DataBindingComponent},

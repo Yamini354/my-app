@@ -132,3 +132,8 @@ API INTEGRATION:
 to create interface:
 ====================
 ng g i vehicle
+
+to activate gard:
+=================
+ng g g auth
+? Which type of guard would you like to create? CanActivate
