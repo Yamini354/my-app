@@ -23,6 +23,7 @@ import { AccountDetailsComponent } from './account-details/account-details.compo
 import { StudentDetailsComponent } from './student-details/student-details.component';
 import { CreateStudentComponent } from './create-student/create-student.component';
 import { AuthGuard } from './auth.guard';
+import { NotifyGuard } from './notify.guard';
 
 const routes: Routes = [
   {path:'', component:LoginComponent},
@@ -40,7 +41,7 @@ const routes: Routes = [
     {path:'flipkartproducts',component:FlipkartproductsComponent},
     {path:'mail',component:MailComponent},
     {path:'weather',component:WeatherComponent},
-    {path:'create-vehicles',component:CreateVehiclesComponent},
+    {path:'create-vehicles', canDeactivate:[NotifyGuard], component:CreateVehiclesComponent},
     {path:'create-accounts',component:CreateAccountsComponent},
     {path:'students',component:StudentsComponent},
     {path:'vehicle-details/:id',component:VehicleDetailsComponent},
