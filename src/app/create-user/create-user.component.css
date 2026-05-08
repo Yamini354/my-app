@@ -15,12 +15,17 @@ h1 {
 
 /* Form container */
 form {
-  width: 450px;
+  width: 480px;
   margin: 20px auto;
   padding: 25px;
   background: white;
   border-radius: 10px;
   box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+p{
+    color: red;
+    margin: 0;
 }
 
 /* Labels */

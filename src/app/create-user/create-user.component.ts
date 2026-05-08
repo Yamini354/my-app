@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { FormArray, FormControl, FormGroup } from '@angular/forms';
+import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
+import { capgeminiMail } from '../validators';
 
 @Component({
   selector: 'app-create-user',
@@ -9,15 +10,19 @@ import { FormArray, FormControl, FormGroup } from '@angular/forms';
 export class CreateUserComponent {
 
   userForm:FormGroup = new FormGroup({
-    name: new FormControl(),
-    age: new FormControl(),
-    phone: new FormControl(),
-    email: new FormControl(),
+    name: new FormControl("", [Validators.required, Validators.minLength(3), Validators.maxLength(10)]),
+    age: new FormControl("", [Validators.required, Validators.min(0), Validators.max(100)]),
+    phone: new FormControl("", [Validators.required, Validators.min(1000000000), Validators.max(9999999999)]),
+    email: new FormControl("",[Validators.required,Validators.email,capgeminiMail]),
+    password: new FormControl("",[Validators.required,Validators.pattern(/^(?=[^A-Z]*[A-Z])(?=[^a-z]*[a-z])(?=\D*\d)(?=[^!@#$%^&*]*[!@#$%^&*]).{8,}$/)]),
     address :new FormGroup({
-      city:new FormControl(),
-      pin: new FormControl(),
+      city:new FormControl("",[Validators.required]),
+      pin: new FormControl("", [Validators.required, Validators.min(100000), Validators.max(999999)]),
     }),
-    cards: new FormArray([])
+    cards: new FormArray([]),
+    type: new FormControl(),
+    busFee: new FormControl("", [Validators.required, Validators.min(0)]),
+    hostelFee: new FormControl("", [Validators.required,Validators.min(0)]),
   })
 
   get cardsFormArray(){
@@ -27,9 +32,9 @@ export class CreateUserComponent {
   addCard(){
     this.cardsFormArray.push(
       new FormGroup({
-        number: new FormControl(),
-        name: new FormControl(),
-        cvv: new FormControl(),
+        number: new FormControl("",Validators.required),
+        name: new FormControl("",Validators.required),
+        cvv: new FormControl("",Validators.required),
       })
     )
   }
@@ -37,7 +42,7 @@ export class CreateUserComponent {
   deleteCard(i:number){
     this.cardsFormArray.removeAt(i);
   }
-  
+
   submit(){
     console.log(this.userForm);
   }
