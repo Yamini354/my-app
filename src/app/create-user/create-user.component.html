@@ -36,6 +36,14 @@
     </div>
     <br>
 
+    <label for="">Password:</label>
+    <input type="password" formControlName="password">
+    <div *ngIf="userForm.get('password')?.touched && userForm.get('email')?.invalid">
+        <p *ngIf="userForm.get('password')?.errors?.['required']">*Password is required</p>
+        <p *ngIf="userForm.get('password')?.errors?.['pattern']">At least one C,S,N,Spe and min 8 len</p>
+    </div>
+    <br>
+
     <div formGroupName="address">
         <label for="">City:</label>
         <input type="text" formControlName="city">

@@ -13,6 +13,7 @@ export class CreateUserComponent {
     age: new FormControl("", [Validators.required, Validators.min(0), Validators.max(100)]),
     phone: new FormControl("", [Validators.required, Validators.min(1000000000), Validators.max(9999999999)]),
     email: new FormControl("",[Validators.required,Validators.email]),
+    password: new FormControl("",[Validators.required,Validators.pattern(/^(?=[^A-Z]*[A-Z])(?=[^a-z]*[a-z])(?=\D*\d)(?=[^!@#$%^&*]*[!@#$%^&*]).{8,}$/)]),
     address :new FormGroup({
       city:new FormControl("",[Validators.required]),
       pin: new FormControl("", [Validators.required, Validators.min(100000), Validators.max(999999)]),
