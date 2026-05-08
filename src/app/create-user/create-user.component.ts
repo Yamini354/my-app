@@ -17,7 +17,10 @@ export class CreateUserComponent {
       city:new FormControl(),
       pin: new FormControl(),
     }),
-    cards: new FormArray([])
+    cards: new FormArray([]),
+    type: new FormControl(),
+    busFee: new FormControl(),
+    hostelFee: new FormControl(),
   })
 
   get cardsFormArray(){
@@ -37,7 +40,7 @@ export class CreateUserComponent {
   deleteCard(i:number){
     this.cardsFormArray.removeAt(i);
   }
-  
+
   submit(){
     console.log(this.userForm);
   }
