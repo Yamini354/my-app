@@ -70,7 +70,27 @@ GIT:
 
     ***) first time suggestion command with -f
 
-4) to create branch:
+4) with branches
+
+    1) create branch in github
+    2) get branch in local and shift to that branch
+
+            git fetch
+            git checkout XXXXX
+
+            check: git branch
+
+    3) after code complete:
+
+            git add .
+            git commit -m "xxxxxxx"
+            git pull origin master
+            git push
+        
+    4) raise pull request, add merge.
+
+
+( 4) to create branch:
     step-1)git branch branchname (only create branch)
     step-2)git checkout branchname
                     or 
@@ -91,6 +111,8 @@ GIT:
 git clone url(https://github.com/Yamini354/my-app.git)
 hear we don't get node modules file. so we need to use command to install: 
     npm i
+)
+
 
 API INTEGRATION:
 ================
