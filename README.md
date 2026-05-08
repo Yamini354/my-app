@@ -137,3 +137,8 @@ to activate or create guard:
 ===========================
 ng g g auth
 ? Which type of guard would you like to create? CanActivate
+
+to install bootstrap and icons: for css
+==============================
+npm i bootstrap  =>to install bootstrap
+npm i bootstrap bootstrap-icons  =>bootstrap + icons
