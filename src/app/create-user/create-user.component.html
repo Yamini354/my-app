@@ -2,28 +2,55 @@
 
 <form action="" [formGroup]="userForm" (ngSubmit)="submit()">
     <label for="">Name:</label>
-    <input type="text" formControlName="name">
+    <input type="text" formControlName="name" >
+    <div *ngIf="userForm.get('name')?.touched && userForm.get('name')?.invalid">
+        <p *ngIf="userForm.get('name')?.errors?.['required']">*Name is required</p>
+        <p *ngIf="userForm.get('name')?.errors?.['minlength']">Min 3 chars</p>
+        <p *ngIf="userForm.get('name')?.errors?.['maxlength']">Max 10 chars</p>
+    </div>
     <br>
 
     <label for="">Age:</label>
     <input type="number" formControlName="age">
+    <div *ngIf="userForm.get('age')?.touched && userForm.get('age')?.invalid">
+        <p *ngIf="userForm.get('age')?.errors?.['required']">*Age is required</p>
+        <p *ngIf="userForm.get('age')?.errors?.['min']">Min 0</p>
+        <p *ngIf="userForm.get('age')?.errors?.['max']">Max 100 </p>
+    </div>
     <br>
 
     <label for="">Phone:</label>
     <input type="number" formControlName="phone">
+    <div *ngIf="userForm.get('phone')?.touched && userForm.get('phone')?.invalid">
+        <p *ngIf="userForm.get('phone')?.errors?.['required']">*Phone No is required</p>
+        <p *ngIf="userForm.get('phone')?.errors?.['min']">Min 10</p>
+        <p *ngIf="userForm.get('phone')?.errors?.['max']">Max 10 </p>
+    </div>
     <br>
 
     <label for="">Email:</label>
     <input type="email" formControlName="email">
+    <div *ngIf="userForm.get('email')?.touched && userForm.get('email')?.invalid">
+        <p *ngIf="userForm.get('email')?.errors?.['required']">*Email is required</p>
+        <p *ngIf="userForm.get('email')?.errors?.['email']">Invalid email format</p>
+    </div>
     <br>
 
     <div formGroupName="address">
         <label for="">City:</label>
         <input type="text" formControlName="city">
+        <div *ngIf="userForm.get('address')?.get('city')?.touched && userForm.get('address')?.get('city')?.invalid">
+            <p *ngIf="userForm.get('address')?.get('city')?.errors?.['required']">*City is required</p>
+        </div>
         <br>
 
         <label for="">Pin:</label>
         <input type="number" formControlName="pin">
+        <div *ngIf="userForm.get('address')?.get('pin')?.touched && userForm.get('address')?.get('pin')?.invalid">
+            <p *ngIf="userForm.get('address')?.get('pin')?.errors?.['required']">*pin is required</p>
+            <p *ngIf="userForm.get('address')?.get('pin')?.errors?.['min']">Min 6</p>
+            <p *ngIf="userForm.get('address')?.get('pin')?.errors?.['max']">Max 6 </p>
+        </div>
         <br>
 
     </div>
@@ -38,14 +65,23 @@
 
                 <label for="">Number:</label>
                 <input type="number" formControlName="number">
+                <div *ngIf="cardsFormArray.controls[i]?.get('number')?.touched && cardsFormArray.controls[i]?.get('number')?.invalid">
+                    <p *ngIf="cardsFormArray.controls[i]?.get('number')?.errors?.['required']">*Card number is required</p>
+                </div>
                 <br>
 
                 <label for="">Name:</label>
                 <input type="text" formControlName="name">
+                <div *ngIf="cardsFormArray.controls[i]?.get('name')?.touched && cardsFormArray.controls[i]?.get('name')?.invalid">
+                    <p *ngIf="cardsFormArray.controls[i]?.get('name')?.errors?.['required']">*Card name is required</p>
+                </div>
                 <br>
 
                 <label for="">Cvv:</label>
                 <input type="number" formControlName="cvv">
+                <div *ngIf="cardsFormArray.controls[i]?.get('cvv')?.touched && cardsFormArray.controls[i]?.get('cvv')?.invalid">
+                    <p *ngIf="cardsFormArray.controls[i]?.get('cvv')?.errors?.['required']">*Card cvv is required</p>
+                </div>
                 <br>
 
                 <button (click)="deleteCard(i)">Delete</button>
@@ -65,14 +101,24 @@
     <div *ngIf="userForm.get('type')?.value=='dayScholor'">
         <label for="">Bus Fee:</label>
         <input type="number" formControlName="busFee">
+        <div *ngIf="userForm.get('busFee')?.touched && userForm.get('busFee')?.invalid">
+        <p *ngIf="userForm.get('busFee')?.errors?.['required']">*BusFee is required</p>
+        <p *ngIf="userForm.get('busFee')?.errors?.['min']">Min 0</p>
+    </div>
         <br>
     </div>
     
     <div *ngIf="userForm.get('type')?.value=='residential'">
         <label for="">Hostel Fee:</label>
         <input type="number" formControlName="hostelFee">
+        <div *ngIf="userForm.get('hostelFee')?.touched && userForm.get('hostelFee')?.invalid">
+            <p *ngIf="userForm.get('hostelFee')?.errors?.['required']">*HostelFee is required</p>
+            <p *ngIf="userForm.get('hostelFee')?.errors?.['min']">Min 0</p>
+        </div>
         <br>
     </div>
 
     <input type="submit">
 </form>
+
+
