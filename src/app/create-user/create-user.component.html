@@ -32,7 +32,8 @@
     <input type="email" formControlName="email">
     <div *ngIf="userForm.get('email')?.touched && userForm.get('email')?.invalid">
         <p *ngIf="userForm.get('email')?.errors?.['required']">*Email is required</p>
-        <p *ngIf="userForm.get('email')?.errors?.['email']">Invalid email format</p>
+        <p *ngIf="userForm.get('email')?.errors?.['email']">Invalid email format.</p>
+        <p *ngIf="userForm.get('email')?.errors?.['capgeminiMail']">Only Capgemin mails allowed.</p>
     </div>
     <br>
 
