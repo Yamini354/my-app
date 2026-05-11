@@ -29,6 +29,9 @@ import { StudentDetailsComponent } from './student-details/student-details.compo
 import { CreateStudentComponent } from './create-student/create-student.component';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { ProductFormComponent } from './product-form/product-form.component';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component';
+import { RatingComponent } from './rating/rating.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +59,10 @@ import { ProductFormComponent } from './product-form/product-form.component';
     StudentDetailsComponent,
     CreateStudentComponent,
     CreateUserComponent,
-    ProductFormComponent
+    ProductFormComponent,
+    ParentComponent,
+    ChildComponent,
+    RatingComponent
   ],
   imports: [
     BrowserModule,
