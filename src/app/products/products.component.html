@@ -67,7 +67,9 @@
                 <td>{{i+1}}</td>
                 <td>{{product.name}}</td>
                 <td>{{product.price}}</td>
-                <td>{{product.rating}}</td>
+                <td>
+                    <app-rating [rating]="product.rating" (ratingChange)="updateRating($event)"></app-rating>
+                </td>
                 <td>{{product.freeDelivery ? 'Yes' : 'No'}}</td>
                 
                 <td>

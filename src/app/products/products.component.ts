@@ -72,4 +72,8 @@ cart() {
 delete(i:number){
   this.products.splice(i,1);
 }
+
+updateRating(rating:number){
+  alert(rating);
+}
 }
