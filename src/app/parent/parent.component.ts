@@ -10,4 +10,8 @@ export class ParentComponent {
   updateCount(value:number){
     alert(value);
   }
+
+  updateRating(value:number){
+    alert(value);
+  }
 }
