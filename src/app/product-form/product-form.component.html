@@ -1,0 +1,153 @@
+<h1>Product Form</h1>
+
+<form action="" [formGroup]="productForm" (ngSubmit)="submit()">
+    <label for="">Title:</label>
+    <input type="text" formControlName="title">
+    <br>
+
+    <label for="">Description:</label>
+    <input type="text" formControlName="description">
+    <br>
+
+    <label for="">Category:</label>
+    <input type="text" formControlName="category">
+    <br>
+
+    <label for="">Price:</label>
+    <input type="text" formControlName="price">
+    <br>
+
+    <label for="">DiscountPercentage:</label>
+    <input type="text" formControlName="discountPercentage">
+    <br>
+
+    <label for="">Rating:</label>
+    <input type="text" formControlName="rating">
+    <br>
+
+    <label for="">Stock:</label>
+    <input type="text" formControlName="stock">
+    <br>
+
+    <!-- <div formArrayName="tags" *ngFor="let tag of tagsFormArray.controls; let i=index">
+        <div formGroupName="">
+        <label for="">Tags:</label>
+
+        <input type="checkbox" formControlName="beauty">
+        <label for="">Beauty</label>
+
+        <input type="checkbox" formControlName="mascara">
+        <label for="">Mascara</label>
+        </div>
+    </div> -->
+
+    <label for="">Brand:</label>
+    <input type="text" formControlName="brand">
+    <br>
+
+    <label for="">Sku:</label>
+    <input type="text" formControlName="sku">
+    <br>
+
+    <div formGroupName="dimensions">
+
+        <label for="">Width:</label>
+        <input type="text" formControlName="width">
+        <br>
+
+        <label for="">Height:</label>
+        <input type="text" formControlName="height">
+        <br>
+
+        <label for="">Depth:</label>
+        <input type="text" formControlName="depth">
+        <br>
+
+    </div>
+
+    <label for="">WarrantyInformation:</label>
+    <input type="text" formControlName="warrantyInformation">
+    <br>
+
+    <label for="">ShippingInformation:</label>
+    <input type="text" formControlName="shippingInformation">
+    <br>
+
+    <label for="">AvailabilityStatus:</label>
+    <input type="text" formControlName="availabilityStatus">
+    <br>
+
+    <div formArrayName="reviews">
+        <div *ngFor="let review of reviewsFormArray.controls; let i=index">
+            <div formGroupName="{{i}}">
+                <h1>Review {{i+1}}</h1>
+                <label for="">Rating:</label>
+                <input type="text" formControlName="">
+                <br>
+
+                <label for="">comment:</label>
+                <input type="text" formControlName="comment">
+                <br>
+
+                <label for="">date:</label>
+                <input type="text" formControlName="date">
+                <br>
+
+                <label for="">reviewerName:</label>
+                <input type="text" formControlName="reviewerName">
+                <br>
+
+                <label for="">reviewerEmail</label>
+                <input type="text" formControlName="reviewerEmail">
+                <br>
+                
+                <button (click)="deleteCard(i)">Delete</button>
+                <hr>
+            </div>
+        </div>
+    </div>
+
+    <button (click)="addReview()">Add Review</button> 
+    <br><br>
+    <label for="">ReturnPolicy:</label>
+    <input type="text" formControlName="returnPolicy">
+    <br>
+
+    <label for="">MinimumOrderQuantity:</label>
+    <input type="text" formControlName="minimumOrderQuantity">
+    <br>
+
+    <div formGroupName="meta">
+
+        <label for="">CreatedAt:</label>
+        <input type="text" formControlName="createdAt">
+        <br>
+
+        <label for="">UpdatedAt:</label>
+        <input type="text" formControlName="updatedAt">
+        <br>
+
+        <label for="">Barcode:</label>
+        <input type="text" formControlName="barcode">
+        <br>
+
+        <label for="">QrCode:</label>
+        <input type="text" formControlName="qrCode">
+        <br>
+
+    </div>
+
+    <div FormArrayName="images">
+
+        <label for="">Images:</label>
+        <input type="text" formControlName="images">
+        <br>
+
+    </div>
+
+    <label for="">Thumbnail:</label>
+    <input type="text" formControlName="thumbnail">
+    <br>
+
+    <input type="submit">
+</form>
