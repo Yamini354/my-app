@@ -43,7 +43,11 @@ to start the angular server : ng serve
 
 to create module
 =================
-ng g m modulename  (used to organize components)
+ng g m modulename  (used to organize components)-eager loding
+
+to create router with module
+=============================
+ng g m modulename --routing=true (for lazyloding-to loade  supperately from my-app when we want it to load insted of loading everything at once)
     
 GIT:
 ====
