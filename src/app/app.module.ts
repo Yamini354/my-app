@@ -28,7 +28,6 @@ import { AccountDetailsComponent } from './account-details/account-details.compo
 import { StudentDetailsComponent } from './student-details/student-details.component';
 import { CreateStudentComponent } from './create-student/create-student.component';
 import { CreateUserComponent } from './create-user/create-user.component';
-import { ProductFormComponent } from './product-form/product-form.component';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
 import { RatingComponent } from './rating/rating.component';
@@ -59,7 +58,6 @@ import { RatingComponent } from './rating/rating.component';
     StudentDetailsComponent,
     CreateStudentComponent,
     CreateUserComponent,
-    ProductFormComponent,
     ParentComponent,
     ChildComponent,
     RatingComponent
