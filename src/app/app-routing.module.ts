@@ -26,6 +26,9 @@ import { AuthGuard } from './auth.guard';
 import { NotifyGuard } from './notify.guard';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { ParentComponent } from './parent/parent.component';
+import { ItemsComponent } from './items/items.component';
+import { NavComponent } from './nav/nav.component';
+import { CartComponent } from './cart/cart.component';
 
 const routes: Routes = [
   {path:'', component:LoginComponent},
@@ -54,7 +57,10 @@ const routes: Routes = [
     {path:"create-student",component:CreateStudentComponent},
     {path:"edit-student/:id",component:CreateStudentComponent},
     {path:"create-user",component:CreateUserComponent},
-    {path:"parent",component:ParentComponent}
+    {path:"parent",component:ParentComponent},
+    {path:"items",component:ItemsComponent},
+    {path:"nav",component:NavComponent},
+    {path:"cart",component:CartComponent}
   ]},
   
   {path:'**', component:PageNotFoundComponent}
