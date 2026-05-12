@@ -40,6 +40,10 @@ to create new components
 ng g c login
 
 to start the angular server : ng serve
+
+to create module
+=================
+ng g m modulename  (used to organize components)
     
 GIT:
 ====
@@ -80,7 +84,7 @@ GIT:
 
             check: git branch
     to get data from git(when we are trying to shift the branchs without merging previous branch and then after merging or trying to shift we get locked or deletion component.so by then we use pull request from master to resolve the issue): git pull origin master -f  (by using this comand the data will added to the data)
-    
+
     3) after code complete:
 
             git add .
