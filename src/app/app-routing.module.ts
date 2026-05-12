@@ -25,6 +25,7 @@ import { CreateStudentComponent } from './create-student/create-student.componen
 import { AuthGuard } from './auth.guard';
 import { NotifyGuard } from './notify.guard';
 import { CreateUserComponent } from './create-user/create-user.component';
+import { ProductFormComponent } from './product-form/product-form.component';
 import { ParentComponent } from './parent/parent.component';
 
 const routes: Routes = [
@@ -54,6 +55,7 @@ const routes: Routes = [
     {path:"create-student",component:CreateStudentComponent},
     {path:"edit-student/:id",component:CreateStudentComponent},
     {path:"create-user",component:CreateUserComponent},
+    {path:'product-form',component:ProductFormComponent},
     {path:"parent",component:ParentComponent}
   ]},
   
