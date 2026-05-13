@@ -38,6 +38,7 @@ import { ContactUsModule } from './contact-us/contact-us.module';
 import { PricePipe } from './price.pipe';
 import { CapitalDirective } from './capital.directive';
 import { TokenInterceptor } from './token.interceptor';
+import { ProductFormComponent } from './product-form/product-form.component';
 
 @NgModule({
   declarations: [
@@ -72,7 +73,8 @@ import { TokenInterceptor } from './token.interceptor';
     NavComponent,
     CartComponent,
     PricePipe,
-    CapitalDirective
+    CapitalDirective,
+    ProductFormComponent
   ],
   imports: [
     BrowserModule,
