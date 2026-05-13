@@ -209,21 +209,21 @@
         </div>
         <br>
 
-        <label for="">UpdatedAt:</label>
+        <label for="">UpdatedAt</label>
         <input type="datetime-local" formControlName="updatedAt">
         <div *ngIf="productForm.get('meta.updatedAt')?.touched && productForm.get('meta.updatedAt')?.invalid">
             <p *ngIf="productForm.get('meta.updatedAt')?.errors?.['required']">*UpdatedAt is required</p>
         </div>
         <br>
 
-        <label for="">Barcode:</label>
+        <label for="">Barcode</label>
         <input type="text" formControlName="barcode">
         <div *ngIf="productForm.get('meta.barcode')?.touched && productForm.get('meta.barcode')?.invalid">
             <p *ngIf="productForm.get('meta.barcode')?.errors?.['required']">*Barcode is required</p>
         </div>
         <br>
 
-        <label for="">QrCode:</label>
+        <label for="">QrCode</label>
         <input type="text" formControlName="qrCode">
         <div *ngIf="productForm.get('meta.qrCode')?.touched && productForm.get('meta.qrCode')?.invalid">
             <p *ngIf="productForm.get('meta.qrCode')?.errors?.['qrCode']">*QrCode is required</p>
