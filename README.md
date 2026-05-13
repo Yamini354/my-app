@@ -44,6 +44,10 @@ to start the angular server : ng serve
 to create module
 =================
 ng g m modulename  (used to organize components)
+
+to create custom pipe
+=====================
+ng g p name
     
 GIT:
 ====
