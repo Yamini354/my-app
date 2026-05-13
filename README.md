@@ -56,6 +56,10 @@ ng g d name
 to create custom/dummy api
 ===========================
 create a file in assets like filename.json and connect with backend people and get object structuer to creat dummy api (ex. "/assets/vehicles.json")
+
+to create interceptor
+======================
+ng g interceptor filename (ex: "ng g interceptor token")
     
 GIT:
 ====
