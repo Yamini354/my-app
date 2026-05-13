@@ -173,3 +173,8 @@ to install bootstrap and icons: for css
 ==============================
 npm i bootstrap  =>to install bootstrap
 npm i bootstrap bootstrap-icons  =>bootstrap + icons
+
+
+
+1) sibling, module communication
+2) customs, interceptor, authorization
