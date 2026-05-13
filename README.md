@@ -48,6 +48,10 @@ ng g m modulename  (used to organize components)
 to create custom pipe
 =====================
 ng g p name
+
+to create custom directives
+===========================
+ng g d name
     
 GIT:
 ====
