@@ -34,7 +34,7 @@
     <tbody>
         <tr *ngFor="let account of accounts">
             <td>{{account.account_name}}</td>
-            <td>&dollar; {{account.available_balance}}</td>
+            <td> {{account.available_balance | price}}</td>
             <td>{{account.account_number}}</td>
             <td>{{account.city}}</td>
             <!-- <td>{{account.profie_picture}}</td> -->

@@ -44,6 +44,22 @@ to start the angular server : ng serve
 to create module
 =================
 ng g m modulename  (used to organize components)
+
+to create custom pipe
+=====================
+ng g p name
+
+to create custom directives
+===========================
+ng g d name
+
+to create custom/dummy api
+===========================
+create a file in assets like filename.json and connect with backend people and get object structuer to creat dummy api (ex. "/assets/vehicles.json")
+
+to create interceptor
+======================
+ng g interceptor filename (ex: "ng g interceptor token")
     
 GIT:
 ====
