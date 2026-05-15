@@ -1,0 +1,264 @@
+<h1>Product Form</h1>
+
+<form action="" [formGroup]="productForm" (ngSubmit)="submit()">
+    <label for="">Title:</label>
+    <input type="text" formControlName="title">
+    <div *ngIf="productForm.get('title')?.touched && productForm.get('title')?.invalid">
+        <p *ngIf="productForm.get('title')?.errors?.['required']">*Name is required</p>
+        <p *ngIf="productForm.get('title')?.errors?.['minlength']">Min 3 chars</p>
+        <p *ngIf="productForm.get('title')?.errors?.['maxlength']">Max 20 chars</p>
+    </div>
+    <br>
+
+    <label for="">Description:</label>
+    <textarea rows="4" formControlName="description"></textarea>
+    <div *ngIf="productForm.get('description')?.touched && productForm.get('description')?.invalid">
+        <p *ngIf="productForm.get('description')?.errors?.['required']">*Description is required</p>
+        <p *ngIf="productForm.get('description')?.errors?.['minlength']">Min 50 chars</p>
+        <p *ngIf="productForm.get('description')?.errors?.['maxlength']">Max 250 chars</p>
+    </div>
+    <br>
+
+    <label for="">Category:</label>
+    <input type="text" formControlName="category">
+    <div *ngIf="productForm.get('category')?.touched && productForm.get('category')?.invalid">
+        <p *ngIf="productForm.get('category')?.errors?.['required']">*Category is required</p>
+    </div>
+    <br>
+
+    <label for="">Price:</label>
+    <input type="number" formControlName="price">
+    <div *ngIf="productForm.get('price')?.touched && productForm.get('price')?.invalid">
+        <p *ngIf="productForm.get('price')?.errors?.['required']">*Price is required</p>
+    </div>
+    <br>
+
+    <label for="">DiscountPercentage:</label>
+    <input type="number" formControlName="discountPercentage">
+    <div *ngIf="productForm.get('discountPercentage')?.touched && productForm.get('discountPercentage')?.invalid">
+        <p *ngIf="productForm.get('discountPercentage')?.errors?.['required']">*DiscountPercentage is required</p>
+    </div>
+    <br>
+
+    <label for="">Rating:</label>
+    <input type="number" formControlName="rating">
+    <div *ngIf="productForm.get('rating')?.touched && productForm.get('rating')?.invalid">
+        <p *ngIf="productForm.get('rating')?.errors?.['required']">*Rating is required</p>
+        <p *ngIf="productForm.get('rating')?.errors?.['min']">*Min 1</p>
+        <p *ngIf="productForm.get('rating')?.errors?.['max']">*Max 5</p>
+    </div>
+    <br>
+
+    <label for="">Stock:</label>
+    <input type="text" formControlName="stock">
+    <div *ngIf="productForm.get('stock')?.touched && productForm.get('stock')?.invalid">
+        <p *ngIf="productForm.get('stock')?.errors?.['required']">*Stock is required</p>
+        <p *ngIf="productForm.get('stock')?.errors?.['min']">*Min 1</p>
+        <p *ngIf="productForm.get('stock')?.errors?.['max']">*Max 9999</p>
+    </div>
+    <br>
+
+    <div formArrayName="tags">
+
+        <div *ngFor="let tag of tagsFormArray.controls; let i=index">
+
+            <label>Tag {{i+1}}</label>
+
+            <input type="text" [formControlName]="i">
+            <div *ngIf="tag.touched && tag.invalid">
+                <p *ngIf="tag.errors?.['required']">*Tage is required</p>
+            </div>
+
+            <button class="delete" (click)="deleteTag(i)">Delete</button> <br>
+
+        </div>
+
+    </div>
+
+        <button class="add" (click)="addTag()">Add Tag</button> <br><br>
+
+    <label for="">Brand:</label>
+    <input type="text" formControlName="brand">
+    <div *ngIf="productForm.get('brand')?.touched && productForm.get('brand')?.invalid">
+        <p *ngIf="productForm.get('brand')?.errors?.['required']">*Brand is required</p>
+    </div>
+    <br>
+
+    <label for="">Sku:</label>
+    <input type="text" formControlName="sku">
+    <div *ngIf="productForm.get('sku')?.touched && productForm.get('sku')?.invalid">
+        <p *ngIf="productForm.get('sku')?.errors?.['required']">*Suk is required</p>
+    </div>
+    <br>
+
+    <div class="group-section">
+
+        <h3>Dimensions</h3>
+        <div formGroupName="dimensions">
+
+            <label for="">Width:</label>
+            <input type="number" formControlName="width">
+            <div *ngIf="productForm.get('width')?.touched && productForm.get('width')?.invalid">
+                <p *ngIf="productForm.get('width')?.errors?.['required']">*Width is required</p>
+            </div>
+            <br>
+
+            <label for="">Height:</label>
+            <input type="number" formControlName="height">
+            <div *ngIf="productForm.get('height')?.touched && productForm.get('height')?.invalid">
+                <p *ngIf="productForm.get('height')?.errors?.['required']">*Height is required</p>
+            </div>
+            <br>
+
+            <label for="">Depth:</label>
+            <input type="number" formControlName="depth">
+            <div *ngIf="productForm.get('depth')?.touched && productForm.get('depth')?.invalid">
+                <p *ngIf="productForm.get('depth')?.errors?.['required']">*Depth is required</p>
+            </div>
+            <br>
+
+        </div>
+
+    </div>
+
+    <label for="">WarrantyInformation:</label>
+    <input type="text" formControlName="warrantyInformation">
+    <br>
+
+    <label for="">ShippingInformation:</label>
+    <input type="text" formControlName="shippingInformation">
+    <br>
+
+    <label for="">AvailabilityStatus:</label>
+    <input type="text" formControlName="availabilityStatus">
+    <br>
+
+    <div formArrayName="reviews">
+        <div *ngFor="let review of reviewsFormArray.controls; let i=index">
+            <div formGroupName="{{i}}">
+                <h1>Review {{i+1}}</h1>
+                <label for="">Rating:</label>
+                <input type="number" formControlName="rating">
+                <div *ngIf="review.get('rating')?.touched && review.get('rating')?.invalid">
+                    <p *ngIf="review.get('rating')?.errors?.['required']">*Rating is required</p>
+                    <p *ngIf="review.get('rating')?.errors?.['min']">*Min 1</p>
+                    <p *ngIf="review.get('rating')?.errors?.['max']">*Max 5</p>
+                </div>
+                <br>
+
+                <label for="">comment:</label>
+                <input type="text" formControlName="comment">
+                <div *ngIf="review.get('comment')?.touched && review.get('comment')?.invalid">
+                    <p *ngIf="review.get('comment')?.errors?.['required']">*Comment is required</p>
+                    <p *ngIf="review.get('comment')?.errors?.['min']">*Min 10</p>
+                    <p *ngIf="review.get('comment')?.errors?.['max']">*Max 100</p>
+                </div>
+                <br>
+
+                <label for="">Date:</label>
+                <input type="date" formControlName="date">
+                <div *ngIf="review.get('date')?.touched && review.get('date')?.invalid">
+                    <p *ngIf="review.get('date')?.errors?.['required']">*Date is required</p>
+                </div>
+                <br>
+
+                <label for="">reviewerName:</label>
+                <input type="text" formControlName="reviewerName">
+                <div *ngIf="review.get('reviewerName')?.touched && review.get('reviewerName')?.invalid">
+                    <p *ngIf="review.get('reviewerName')?.errors?.['required']">*ReviewerName is required</p>
+                    <p *ngIf="review.get('reviewerName')?.errors?.['min']">*Min 3</p>
+                    <p *ngIf="review.get('reviewerName')?.errors?.['max']">*Max 50</p>
+                </div>
+                <br>
+
+                <label for="">ReviewerEmail</label>
+                <input type="email" formControlName="reviewerEmail">
+                <div *ngIf="review.get('reviewerEmail')?.touched && review.get('reviewerEmail')?.invalid">
+                    <p *ngIf="review.get('reviewerEmail')?.errors?.['required']">*Rating is required</p>
+                    <p *ngIf="review.get('reviewerEmail')?.errors?.['pattern']">*Valid email</p>
+                </div>
+                <br>
+                
+                <button class="delete" (click)="deleteCard(i)">Delete</button>
+                <hr>
+            </div>
+        </div>
+    </div>
+
+    <button class="add" (click)="addReview()">Add Review</button> 
+    <br><br>
+    <label for="">ReturnPolicy:</label>
+    <input type="text" formControlName="returnPolicy">
+    <br>
+
+    <label for="">MinimumOrderQuantity:</label>
+    <input type="text" formControlName="minimumOrderQuantity">
+    <div *ngIf="productForm.get('minimumOrderQuantity')?.touched && productForm.get('minimumOrderQuantity')?.invalid">
+        <p *ngIf="productForm.get('minimumOrderQuantity')?.errors?.['required']">*MinimumOrderQuantity is required</p>
+        <p *ngIf="productForm.get('minimumOrderQuantity')?.errors?.['min']">*Min 3</p>
+        <p *ngIf="productForm.get('minimumOrderQuantity')?.errors?.['max']">*Max 100</p>
+    </div>
+    <br>
+
+    <div formGroupName="meta">
+
+        <label for="">CreatedAt:</label>
+        <input type="datetime-local" formControlName="createdAt">
+        <div *ngIf="productForm.get('meta.createdAt')?.touched && productForm.get('meta.createdAt')?.invalid">
+            <p *ngIf="productForm.get('meta.createdAt')?.errors?.['required']">*CreatedAt is required</p>
+        </div>
+        <br>
+
+        <label for="">UpdatedAt:</label>
+        <input type="datetime-local" formControlName="updatedAt">
+        <div *ngIf="productForm.get('meta.updatedAt')?.touched && productForm.get('meta.updatedAt')?.invalid">
+            <p *ngIf="productForm.get('meta.updatedAt')?.errors?.['required']">*UpdatedAt is required</p>
+        </div>
+        <br>
+
+        <label for="">Barcode:</label>
+        <input type="text" formControlName="barcode">
+        <div *ngIf="productForm.get('meta.barcode')?.touched && productForm.get('meta.barcode')?.invalid">
+            <p *ngIf="productForm.get('meta.barcode')?.errors?.['required']">*Barcode is required</p>
+        </div>
+        <br>
+
+        <label for="">QrCode:</label>
+        <input type="text" formControlName="qrCode">
+        <div *ngIf="productForm.get('meta.qrCode')?.touched && productForm.get('meta.qrCode')?.invalid">
+            <p *ngIf="productForm.get('meta.qrCode')?.errors?.['qrCode']">*QrCode is required</p>
+        </div>
+        <br>
+
+    </div>
+
+    <div formArrayName="images">
+
+        <div *ngFor="let img of imagesFormArray.controls; let i=index">
+
+            <label>Image {{i+1}}</label>
+
+            <input type="url" [formControlName]="i">
+            <div *ngIf="img.touched && img.invalid">
+                <p *ngIf="img.errors?.['required']">*Image is required</p>
+                <p *ngIf="img.errors?.['pattern']">*Invalid URL format</p>
+            </div>
+
+            <button class="delete" (click)="deleteImage(i)">Delete</button><br>
+
+        </div>
+
+    </div>
+
+    <button class="add" type="button" (click)="addImage()">Add Image</button> <br>
+
+    <label for="">Thumbnail:</label>
+    <input type="url" formControlName="thumbnail">
+    <div *ngIf="productForm.get('thumbnail')?.touched && productForm.get('thumbnail')?.invalid">
+        <p *ngIf="productForm.get('thumbnail')?.errors?.['required']">*Thumbnail is required</p>
+        <p *ngIf="productForm.get('thumbnail')?.errors?.['pattern']">*Invalid URL format</p>
+    </div>
+    <br>
+
+    <input class="submit" type="submit">
+</form>

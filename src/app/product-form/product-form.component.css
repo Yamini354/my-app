@@ -1,0 +1,140 @@
+
+body {
+    background-color: #eef2f7;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Page title */
+h1 {
+    text-align: center;
+    color: #1e3a5f;
+    margin: 20px 0 30px;
+}
+
+/* Form container */
+form {
+    width: 750px;
+    margin: auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 5px 20px rgba(0,0,0,0.1);
+}
+
+/* Labels */
+label {
+    display: inline-block;
+    width: 190px;
+    font-weight: bold;
+    color: #1f2d3d;
+    margin-bottom: 12px;
+}
+
+/* Inputs */
+input {
+    width: 380px;
+    padding: 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    margin-bottom: 12px;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 6px rgba(37,99,235,0.4);
+}
+
+textarea {
+    width: 380px;
+    padding: 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    outline: none;
+    resize: vertical;
+}
+
+textarea:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 6px rgba(37,99,235,0.4);
+}
+
+/* Section boxes (dimensions, meta, reviews, etc.) */
+.group-section,
+div[formgroupname],
+div[formarrayname] {
+    margin: 20px 0;
+    padding: 15px;
+    background: #f8fafc;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+}
+
+/* Section heading */
+h3 {
+    margin-bottom: 15px;
+    color: #1e3a5f;
+}
+
+/* Buttons base */
+button {
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+/* Add button */
+.add {
+    background-color: #16a34a;
+    color: white;
+    margin-top: 10px;
+}
+
+.add:hover {
+    background-color: #15803d;
+}
+
+/* Delete button */
+.delete {
+    background-color: #dc2626;
+    color: white;
+    margin-left: 10px;
+}
+
+.delete:hover {
+    background-color: #b91c1c;
+}
+
+/* Submit button */
+.submit {
+    width: 100%;
+    background-color: #2563eb;
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.submit:hover {
+    background-color: #1d4ed8;
+}
+
+/* HR styling */
+hr {
+    border: none;
+    border-top: 1px solid #d1d5db;
+    margin: 15px 0;
+}
+
+/* Fix spacing for dynamic lists */
+div[formarrayname] > div {
+    margin-bottom: 10px;
+}
+
+p{
+    color: red;
+}
