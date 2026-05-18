@@ -183,6 +183,19 @@ API INTEGRATION:
 
 8)  delete  delete(url/id)                   delete
 
+Forms:
+=======
+1) FormGroup
+
+2) NestedFormGroup
+
+3) FormArray
+
+4) Dynamic Form
+
+5) Form Validations
+
+6) Custom Validations
 
 to create interface:
 ====================
